@@ -1,0 +1,19 @@
+---
+- hosts:
+    - all
+  tasks:
+    - name: Get Mackerel Host
+      mackerel_host:
+      register: result
+
+    - name: Debug result
+      debug: var=result
+
+    - name: Set Mackerel Host Status
+      mackerel_host:
+        status: standby
+    
+    - name: Set Mackerel Host Role Fullnames
+      mackerel_host:
+        role_fullnames:
+          - test:ansible_module
