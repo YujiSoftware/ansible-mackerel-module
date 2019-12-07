@@ -4,7 +4,7 @@ Ansible plugin for operating Mackerel.
 
 ## Install
 
-Copy `mackerel_host.py` under the library folder of the playbook.
+Copy [`mackerel_host.py`](https://raw.githubusercontent.com/YujiSoftware/ansible-mackerel-module/master/library/mackerel_host.py) under the library folder of the playbook.
 
 ```
 playbook/
@@ -15,7 +15,7 @@ playbook/
  └─ main.yml
 ```
 
-Or, copy `mackerel_host.py` to these locations:
+Or, copy [`mackerel_host.py`](https://raw.githubusercontent.com/YujiSoftware/ansible-mackerel-module/master/library/mackerel_host.py) to these locations:
 
 * ~/.ansible/plugins/modules/
 * /usr/share/ansible/plugins/modules/
