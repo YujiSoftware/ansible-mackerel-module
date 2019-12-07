@@ -2,6 +2,12 @@
 
 Ansible plugin for operating Mackerel.
 
+```yaml
+- name: Set Mackerel host status
+  mackerel_host:
+    status: working
+```
+
 ## Install
 
 Copy [`mackerel_host.py`](https://raw.githubusercontent.com/YujiSoftware/ansible-mackerel-module/master/library/mackerel_host.py) under the library folder of the playbook.
@@ -36,13 +42,13 @@ Or, copy [`mackerel_host.py`](https://raw.githubusercontent.com/YujiSoftware/ans
 ### Set the Mackerel host status to standby while ansible is running and restore it when finished.
 
 ```yaml
-- name: Set Mackerel Host Status
+- name: Set Mackerel host status
   mackerel_host:
     status: standby
 
 # - Changing host settings -
 
-- name: Set Mackerel Host Status
+- name: Set Mackerel host status
   mackerel_host:
     status: working
 ```
@@ -50,10 +56,10 @@ Or, copy [`mackerel_host.py`](https://raw.githubusercontent.com/YujiSoftware/ans
 ### Set Mackerel host role
 
 ```yaml
-- name: Set Mackerel Host Role Fullnames
+- name: Set Mackerel host role fullnames
   mackerel_host:
     role_fullnames:
-      - test_project:web
+      - service:web
 ```
 
 ### Get Mackerel host configuration and branch processing
