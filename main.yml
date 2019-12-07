@@ -2,12 +2,18 @@
 - hosts:
     - all
   tasks:
-    - name: Get Mackerel Host
+    - name: Get Mackerel host configuration
       mackerel_host:
-      register: result
+      register: mackerel
 
-    - name: Debug result
-      debug: var=result
+    - name: Show Mackerel configuration
+      debug: var=mackerel
+      
+    - name: Copy file if roles has "service"
+      copy:
+        content: "{{ mackerel['host']['roles'] }}"
+        dest: /tmp/mackerel.role
+      when: mackerel['host']['roles']['service'] is defined
 
     - name: Set Mackerel Host Status
       mackerel_host:
@@ -16,4 +22,4 @@
     - name: Set Mackerel Host Role Fullnames
       mackerel_host:
         role_fullnames:
-          - test:ansible_module
+          - service:role
