@@ -17,7 +17,7 @@ playbook/
  ├─ inventories/
  ├─ roles/
  ├─ library/
- │  └─ mackerel_host.py (Here!)
+ │  └─ mackerel_host.py (👈 Here!)
  └─ main.yml
 ```
 
