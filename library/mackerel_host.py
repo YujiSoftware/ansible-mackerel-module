@@ -50,7 +50,7 @@ def main():
 
     if apikey is None:
         # TODO: Reading TOML in a better way
-        apikey_re = re.compile(r'^\s*apikey\s*=\s*"(\w+)"$')
+        apikey_re = re.compile(r'^\s*apikey\s*=\s*"([^"]+)"$')
         with open(conf) as file:
             for line in file:
                 match = apikey_re.match(line)
